@@ -8,11 +8,13 @@ export class UsersController {
   @Example<User>({
     createdAt: new Date(),
     email: 'test@test.com',
+    name: "chatGPT",
     id: 1,
   })
   public async Current(): Promise<User> {
     return {
       createdAt: new Date(),
+      name: "chatGPT",
       email: 'test',
       id: 666,
     };
@@ -23,6 +25,7 @@ export class UsersController {
   public async Get(userId: number): Promise<User> {
     return {
       createdAt: new Date(),
+      name: "chatGPT",
       email: 'test2',
       id: userId,
     };
@@ -34,8 +37,11 @@ export class UsersController {
    */
   @Post()
   public async Create(@Body() request: UserCreateRequest): Promise<User> {
+    let name = "BOB"
+    let unusedVariable= "doesnotMatter"
     return {
       createdAt: new Date(),
+      name: name,
       email: request.email,
       id: 666,
     };
@@ -52,6 +58,7 @@ export class UsersController {
   public async Update(@Body() request: UserUpdateRequest): Promise<User> {
     return {
       createdAt: request.createdAt,
+      name: "chatGPT-update",
       email: request.email,
       id: 1337,
     };
