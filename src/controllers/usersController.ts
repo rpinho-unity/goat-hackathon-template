@@ -23,6 +23,7 @@ export class UsersController {
   /** Get user by ID */
   @Get('{userId}')
   public async Get(userId: number): Promise<User> {
+    const badcode = "baad"
     return {
       createdAt: new Date(),
       name: "chatGPT",
