@@ -15,19 +15,22 @@ export class UsersController {
     return {
       createdAt: new Date(),
       name: "chatGPT",
-      email: 'test',
-      id: 666,
+      email: 'test@test.com',
+      id: 1,
     };
   }
 
   /** Get user by ID */
   @Get('{userId}')
   public async Get(userId: number): Promise<User> {
-    const badcode = "baad"
+    if(typeof userId !== "number") {
+      throw new Error("User ID must be a number");
+    }
+    
     return {
       createdAt: new Date(),
       name: "chatGPT",
-      email: 'test2',
+      email: 'test2@test.com',
       id: userId,
     };
   }
@@ -38,13 +41,11 @@ export class UsersController {
    */
   @Post()
   public async Create(@Body() request: UserCreateRequest): Promise<User> {
-    let name = "BOB"
-    let unusedVariable= "doesnotMatter"
     return {
       createdAt: new Date(),
-      name: name,
+      name: request.name,
       email: request.email,
-      id: 666,
+      id: 666, // Ideally, you would use a method to generate a unique ID here.
     };
   }
 
@@ -59,9 +60,9 @@ export class UsersController {
   public async Update(@Body() request: UserUpdateRequest): Promise<User> {
     return {
       createdAt: request.createdAt,
-      name: "chatGPT-update",
+      name: request.name,
       email: request.email,
-      id: 1337,
+      id: 1337, // Ideally, you would use the ID from the request here.
     };
   }
 }
