@@ -20,11 +20,13 @@ export class AccountsController {
       {
         createdAt: new Date(),
         email: 'test@test.com',
+        name: "chatGPT",
         id: 1,
       },
       {
         createdAt: new Date(),
         email: 'test2@test2.com',
+        name: "chatGPT2",
         id: 2,
       },
     ];

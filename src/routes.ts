@@ -15,6 +15,7 @@ const models: TsoaRoute.Models = {
         "properties": {
             "id": { "dataType": "double", "required": true },
             "email": { "dataType": "string", "required": true },
+            "name": { "dataType": "string", "required": true },
             "createdAt": { "dataType": "datetime", "required": true },
         },
         "additionalProperties": true,
@@ -33,6 +34,7 @@ const models: TsoaRoute.Models = {
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
     "UserCreateRequest": {
         "properties": {
+            "name": { "dataType": "string", "required": true },
             "email": { "dataType": "string", "required": true },
         },
         "additionalProperties": true,
@@ -42,6 +44,7 @@ const models: TsoaRoute.Models = {
         "properties": {
             "createdAt": { "dataType": "datetime" },
             "email": { "dataType": "string", "required": true },
+            "name": { "dataType": "string", "required": true },
         },
         "additionalProperties": true,
     },
